@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tengo Sueño</title>
+	</head>
+	<body>
+		<header>
+			<h1>Pagína Increiblemente Importante</h1>	
+		</header>
+		<main>
+			<button>Este Botón es Demasiado Inutíl</button>
+			<br><br>
+			<button onclick="accionUno()" id="botonUno">Botón Número Uno</button> <!-- el Id es para el javaScript !-->
+			<br><br>
+			<button onclick="accionDos()" id="botonDos">Segundo Botón</button>
+			<br><br>
+			<button onclick="accionTres()" id="botonTres">Botón Número Tres</button> 
+			<br><br> 
+
+			<h2>Datos Personales</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+			<h4>Primer Nombre</h4>
+			<input type="text" name="recibirNombreUno" id="primerNombre">
+			<h4>Segundo Nombre</h4>
+			<input type="text" name="recibirNombreDos" id="segundoNombre">
+			<h4>Primer Apellido</h4>
+			<input type="text" name="recibirApellidoUno" id="primerApellido">
+			<h4>Segundo Apellido</h4>
+			<input type="text" name="recibirApellidoDos" id="segundoApellido">
+			<br><br>
+			<button onclick="accionCuatro()" id="botonCuatro">Datos Ingresados</button>
+			<h4>Nombres&nbsp;<output id="salidaUno"></output> y Apellidos&nbsp;<output id="salidaDos"></output></h4>
+			<h4>Nombre Completo&nbsp;<output id="salidaTres"></output></h4> <!-- Espacion Para Llevar o Depositar una Salida !-->
+
+			<style type="text/css">
+				body
+				{
+					background: url(fondo.jpg), no-repeat;
+					color: white;
+				}
+
+				h2, h1, #salidaUno, #salidaDos, #salidaTres /* Referencia Mediante el Id */
+				{
+					color: #f58f12;
+				}
+
+				button
+				{
+					color: white;
+					background: #340404;
+					padding: 7px 9px;
+					border-radius: 8px;
+					margin-left: 10px;
+				}
+
+			</style>
+			<script type="text/javascript">
+				
+				function accionUno() //Con esto se esta Llamando a una Función Mediante la Accion
+				{
+					alert("Acabas de Clic kear un Botón, Esto es una Alerta")
+				}
+
+				function accionDos()
+				{
+					confirm("Esto es una Confirmación")
+				}
+
+				function accionTres()
+				{
+					alert("Primero se Lanza una Alerta"); 
+					confirm("y Ahora una Confirmación")
+				}
+
+				function accionCuatro()
+				{
+					var nombreCompleto = document.getElementById("primerNombre").value+" "+ // Trae un Algo Gracias al Id
+										 document.getElementById("segundoNombre").value+" "+
+										 document.getElementById("primerApellido").value+" "+
+										 document.getElementById("segundoApellido").value+"."
+
+					var nombres = document.getElementById("primerNombre").value+" "+
+								  document.getElementById("segundoNombre").value
+
+					var apellidos = document.getElementById("primerApellido").value+" "+
+										 document.getElementById("segundoApellido").value+"."
+
+					confirm("vamos a añadir el nombre "+nombreCompleto);
+
+					document.getElementById("salidaUno").innerHTML=nombres;
+					document.getElementById("salidaDos").innerHTML=apellidos;
+					document.getElementById("salidaTres").innerHTML=nombreCompleto;
+				}
+
+			</script>
+
+		</main>
+		<footer>
+			
+		</footer>
+	</body>
+</html>
